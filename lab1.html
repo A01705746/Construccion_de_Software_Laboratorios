@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wilih=device-wilih, initial-scale=1.0">
+    <title>Laboratorio 1</title>
+</head>
+<body style="background-color:hsl(172, 79%, 90%)">
+    <header>
+        <h1>Laboratorio 1: Introducción a las aplicaciones web, HTML5 y ciclo de vida de los sistemas de información</h1>
+        Autor: Enrique Santos Fraire <br>
+        Matrícula: A01705746 <br>
+        Correo electrónico: A01705746@itesm.mx <br><br>
+    </header>
+    <main>
+        <div>
+        <hr>
+        <h3>Mi Afición: Los Videojuegos</h3>
+        <table border="1">
+            <thead>
+                <strong><em>Mis videojuegos favoritos</em></strong>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>HALO</th>
+                    <td><img src="3001392_press14.jpg" alt="Halo" width="500"></th>
+                    <td><a href="https://www.youtube.com/watch?v=sCxv2daOwjQ">Soundtrack</a></td>
+                </tr>
+                <tr>
+                    <th>NieR: Automata</th>
+                    <td><img src="655990.jpg" alt="Nier" width="500"></td>
+                    <td><a href="https://www.youtube.com/watch?v=v7006NXmEdc">Soundtrack</a></td>
+                </tr>
+                <tr>
+                    <th>League of Legends</th>
+                    <td><img src="champion-akali-splash.jpg" alt="LOL" width="500"></td>
+                    <td><a href="https://www.youtube.com/watch?v=fB8TyLTD7EE">Soundtrack</a></td>
+                </tr>
+                <tr>
+                    <th>Warframe</th>
+                    <td><img src="Warframe (15).png" alt="Warframe" width="500"></td>
+                    <td><a href="https://www.youtube.com/watch?v=mPTCq3LiZSE">Soundtrack</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <hr>
+        </div>
+
+        <div>
+            <h3>Formas de prueba</h3>
+            <label>Color: 
+                <input type="color" autofocus />
+            </label>
+            |
+            <label>Fecha: 
+                <input type="date" />
+            </label>
+            |
+            <label>Número: 
+                <input type="number" min = "0" max="100" step="1" value="0"/>
+            </label>
+            |
+            <label>Rango: 
+                0<input type="range" min="0" max="50" value="25"/>50
+            </label>
+            |
+            <label>Hora: 
+                <input type="time" />
+            </label>
+            |
+            <label>Contraseña: 
+                <input type="password" />
+            </label>
+            |
+            <label>Radiobutton 
+                <input type="radio" />
+            </label>
+            |
+            <label>Checkbox
+                <input type="checkbox" />
+            </label>
+            |
+            <input type="button" onclick="alert('¡Hola!')" value="Botón">
+            <br>
+            <br>
+        </div>
+
+        <div>
+        <hr>
+        <h3>Preguntas</h3>
+        <ol>
+            <li>¿Cuál es la diferencia entre Internet y la World Wide Web?</li>
+            <ul>
+                <li>Internet es una red de computadoras alrededor del mundo, que se usa para acceder a la World Wide Web, que es una recopilación de información y páginas que se asienta sobre esta.</li>
+                <li>“En cierto modo internet equivaldría a la infraestructura —las carreteras de países de todo el mundo— mientras que el contenido de las páginas web es lo que viaja sobre esa infraestructura —los autos, camiones, autobuses— para transportar información.” (BBC News Mundo, 2019)</li>
+            </ul>
+            <br>
+
+            <li>¿Cuáles son las partes de un URL?</li>
+            <ul>
+                <li>Protocolo: HTTP, HTTPS, entre otros.</li>
+                <li>Dominio: Nombre utilizado para identificar una o más direcciones IP.</li>
+                <li>Ruta: Especifica la ubicación del recurso o servidor.</li>
+                <li>Parámetros: Datos adicionales para identificar el recurso en el servidor.</li>
+                <li>(Aviani, 2019)</li>
+            </ul>
+            <img src="URLP.jpg" alt="Partes del URL">
+
+            <li>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</li>
+            <ul>
+                <li>GET: Puede entenderse como “leer”, solicita datos de un recurso específico sin que este sea modificado de ninguna 
+                forma o cambie su estado. </li>
+                <li>HEAD: Es similar al GET, pero el resultado del método no contiene cuerpo, sólo encabezados, se utiliza para saber 
+                si el recurso existe.</li>
+                <li>POST: Envía datos al servidor para crear un nuevo recurso.</li>
+                <li>PUT: Actualiza un recurso existente usando el contenido, usando el contenido de la solicitud en el cuerpo.</li>
+                <li>PATCH: Aplica modificaciones parciales a un recurso.</li>
+                <li>DELETE: Elimina un recurso específico.</li>
+                <li>(Aviani, 2019)</li>
+            </ul>
+            <br>
+
+            <li>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña 
+                en algún sitio? ¿Por qué?</li>
+            <ul>
+                <li>El método POST porque envía datos de información.</li>
+            </ul>
+            <br>
+
+            <li>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</li>
+            <ul>
+                <li>El método GET pues está leyendo el contenido de la página para mostrar al usuario.</li>
+            </ul>
+            <br>
+
+            <li>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</li>
+            <ul>
+                <li>Los códigos 2xx indican una solicitud exitosa, por lo que no ocurre ningún error. (Aviani, 2019)</li>
+            </ul>
+            <br>
+
+            <li>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se 
+                encontró con un error 404? ¿Por qué?</li>
+            <ul>
+                <li>Si, este error indica que el URL no se reconoce y por lo tanto no puede encontrar el recurso buscado, se trata de un 
+                enlace roto, dejando una mala experiencia al usuario, dando a entender que la página es deficiente y poco cuidada. 
+                (MDN contributors, 2019) (INBOUNDCYCLE, s.f.)</li>
+            </ul>
+            <br>
+
+            <li>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se 
+                encontró con un error 500? ¿Por qué?</li>
+            <ul>
+                <li>Si, porque indica un error interno del servidor, encontró una situación que no sabe manejar y por lo tanto debe ser 
+                corregida. (MDN contributors, 2019)</li>
+            </ul>
+            <br>
+
+            <li>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 
+                que en HTML5 estén desaprobados.</li>
+            <ul>
+                <li>Que los antiguos atributos no son reconocidos en el entorno HTML5 puesto que hay funciones CSS maneja de una forma 
+                más eficiente. Entre los elementos de HTML4 que ya no están disponibles tenemos: type, axis, align, background, hspace, 
+                vspace, size, entre otros. (tutorialspoint, s.f.)</li>
+            </ul>
+            <br>
+
+            <li>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</li>
+            <ul>
+                <li>HTML5 está en continuo desarrollo a diferencia del 4 que tiene un estándar fijo, HTML5 cuenta con una sintaxis 
+                simplificada y fácil de leer, es compatible con HTML4, además añade los elementos de header y footer para una mejor 
+                anatomía de sitios web, section y article para códigos más estructurados y nuevas formas de insertar contenido 
+                multimedia con menos código. (Vargas González, 2012)</li>
+            </ul>
+            <br>
+
+            <li>¿Qué componentes de estructura y estilo tiene una tabla?</li>
+            <ul>
+                <li>table: contiene todo lo relacionado a la tabla.</li>
+                <li>caption: describe la tabla y su contenido.</li>
+                <li>thead: encabezado de las tablas, describe la información de cada columna.</li>
+                <li>tbody: contiene la información de la tabla.</li>
+                <li>tfoot: pie de la tabla.</li>
+                <li>tr: engloba cada fila de la tabla.</li>
+                <li>th: contiene la información de una celda individual de encabezado.</li>
+                <li>td: contiene la información de una celda individual.</li>
+                <li>colgroup: agrupa una o más columnas para dar formato.</li>
+                <li>col: define una columna única de información. (Nice, 2017)</li>
+            </ul>
+            <br>
+
+            <li>¿Cuáles son los principales controles de una forma HTML5?</li>
+            <ul>
+                <li>input: define el tipo de información que meterá el usuario.</li>
+                <li>type=””: especifica el tipo de campo, puede ser de texto, contraseña, fecha-hora, checkbox, entre otros.</li>
+                <li>value=””: valor del campo.</li>
+                <li>size=””: tamaño de caracterese del input.</li>
+                <li>step=””: número de intervalos legales para un input. (Nice, 2017)</li>
+            </ul>
+            <br>
+
+            <li>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</li>
+            <ul>
+                <li>Con Firefox tengo 465/555.</li>
+            </ul>
+            <br>
+
+            <li>Sobre el ciclo de vida y desarrollo de los sistemas de información:</li>
+            <ul>
+                <li>¿Cuál es el ciclo de vida de los sistemas de información?</li>
+                <ul>
+                    <li>“Es un sistema ya sea automatizado o manual que engloba personas, máquinas y métodos organizados para recopilar, procesar, transmitir datos que representan información. Abarca la infraestructura, la organización, el personal y todos los componentes necesarios para la recopilación, procesamiento, almacenamiento, transmisión, visualización, diseminación y organización de la información.” (Redacción PowerData, 2019)</li>
+                </ul>
+                <li>¿Cuál es el ciclo de desarrollo de sistemas de información?</li>
+                <ul>
+                    <li>Es un activo corporativo esencial que se divide en 7 fases:</li>
+                </ul>
+                <ol>
+                    <li>Fase de planeación</li>
+                    <li>Fase de análisis</li>
+                    <li>Fase de diseño</li>
+                    <li>Fase de desarrollo</li>
+                    <li>Fase de integración y periodo de pruebas</li>
+                    <li>Fase de implementación</li>
+                    <li>Fase de mantenimiento (Redacción PowerData, 2019)</li>
+                </ol>
+            </ul>
+        </ol>
+
+        <h3>Referencias</h3>
+        <ul>
+            <li>BBC News Mundo (2019, marzo 12) ¿Cuál es la diferencia entre internet y la web? (y por qué muchos las confunden). Recuperado de <a href="https://www.bbc.com/mundo/noticias-47538812">https://www.bbc.com/mundo/noticias-47538812</a></li>
+            <li>Aviani, G. (2019, septiembre 11) An introduction to HTTP: everything you need to know. Recuperado de <a href="https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/">https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/</a></li>
+            <li>MDN contributors (2020, diciembre 18) HTTP response status codes. Recuperado de <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</a></li>
+            <li>INBOUNDCYCLE (s.f.) Error 404: ¿qué es y cómo solucionarlo de manera rápida y efectiva? Recuperado de <a href="https://www.inboundcycle.com/diccionario-marketing-online/error-404">https://www.inboundcycle.com/diccionario-marketing-online/error-404</a></li>
+            <li>Tutorialspoint (s.f) HTML5 - Deprecated Tags & Attributes. Recuperado de <a href="https://www.tutorialspoint.com/html5/html5_deprecated_tags.htm">https://www.tutorialspoint.com/html5/html5_deprecated_tags.htm</a></li>
+            <li>Vargas González, M. (2012, septiembre 20) Diferencias entre HTML 4 y HTML 5. Recuperado de <a href="http://miguelvargasgonzalez.blogspot.com/2012/09/diferencias-entre-html-4-y-html-5.html">http://miguelvargasgonzalez.blogspot.com/2012/09/diferencias-entre-html-4-y-html-5.html</a></li>
+            <li>Nice, B (2017, septiembre 23) Beginner’s HTML Cheat Sheet. Recuperado de <a href="https://medium.com/level-up-web/beginners-html-cheat-sheet-f9b1e3ce88a6">https://medium.com/level-up-web/beginners-html-cheat-sheet-f9b1e3ce88a6</a></li>
+            <li>Redacción PowerData (2019, junio 7) Ciclo de vida de un sistema de información: fases y componentes. Recuperado de: <a href="https://blog.powerdata.es/el-valor-de-la-gestion-de-datos/ciclo-de-vida-de-un-sistema-de-informacion-fases-y-componentes">https://blog.powerdata.es/el-valor-de-la-gestion-de-datos/ciclo-de-vida-de-un-sistema-de-informacion-fases-y-componentes</a></li>
+        </ul>
+        <hr>
+        </div>
+    </main>
+    <footer>
+        Editor HTML utilizado: <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+        <br><br>
+    </footer>
+</body>
+</html>
