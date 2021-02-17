@@ -41,11 +41,12 @@ a {
 }
 
 header {
-  background-color: #263d36;
+  background-color: #464646;
   background-image: url("champion-akali-splash.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
+  background-blend-mode: soft-light;
   line-height: 1.2;
   padding: 10vw 2em;
   text-align: center;
@@ -79,4 +80,12 @@ header a {
 header a:hover {
   background:  #e81c4f;
   color: white;
+}
+
+.fondo_morado{
+  background-color: rgb(234, 206, 250);
+}
+
+#titulo{
+  color: #e81c4f;
 }
