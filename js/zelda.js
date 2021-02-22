@@ -44,3 +44,9 @@ pregunta_hambre();
 const cumple_años = (edad) => edad + 1;
 
 console.log("Nueva edad de Link: ",cumple_años(edad_link));
+
+const arreglo = ["Boomerang"];
+arreglo.push(arma_link);
+console.log(arreglo);
+arreglo[0] = "Arco";
+console.log(arreglo);
