@@ -27,11 +27,16 @@ alert("¡Hola mundo!");
 const nombre = prompt("¿Cómo te llamas?");
 document.write("Hola " + nombre);
 
-const respuesta = confirm("¿Tienes hambre?");
+// Declarar funciones tradicionalmente
+function pregunta_hambre() {
+    const respuesta = confirm("¿Tienes hambre?");
 
-if (respuesta === true) {
-    document.write("<h3>¡Pide una pizza rápido!</h3>");
+    if (respuesta === true) {
+        document.write("<h3>¡Pide una pizza rápido!</h3>");
+    }
+    else{
+        document.write("Ponte a programar");
+    }
 }
-else{
-    document.write("Ponte a programar");
-}
+
+pregunta_hambre();
