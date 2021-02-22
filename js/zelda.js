@@ -40,3 +40,7 @@ function pregunta_hambre() {
 }
 
 pregunta_hambre();
+
+const cumple_años = (edad) => edad + 1;
+
+console.log("Nueva edad de Link: ",cumple_años(edad_link));
