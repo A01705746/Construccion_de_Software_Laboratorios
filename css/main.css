@@ -89,3 +89,35 @@ header a:hover {
 #titulo{
   color: #e81c4f;
 }
+
+.button {
+  border-top: 1px solid #ffb5b5;
+  background: #e62952;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4d0909), to(#e62952));
+  background: -webkit-linear-gradient(top, #4d0909, #e62952);
+  background: -moz-linear-gradient(top, #4d0909, #e62952);
+  background: -ms-linear-gradient(top, #4d0909, #e62952);
+  background: -o-linear-gradient(top, #4d0909, #e62952);
+  padding: 9.5px 19px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 14px;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  vertical-align: middle;
+  }
+.button:hover {
+  border-top-color: #540f1e;
+  background: #540f1e;
+  color: #ccc;
+  }
+.button:active {
+  border-top-color: #de2c2c;
+  background: #de2c2c;
+  }
