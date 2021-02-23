@@ -121,3 +121,7 @@ header a:hover {
   border-top-color: #de2c2c;
   background: #de2c2c;
   }
+
+  .empty {
+    color: #e81c4f;
+  }
