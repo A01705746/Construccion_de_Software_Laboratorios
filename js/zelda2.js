@@ -1,9 +1,5 @@
 // DOM: Document Object Model
 
-function luchar(){
-    console.log("A luchar!!!");
-}
-
 function dar_espada(){
     console.log("Darle una espada a link");
     let espada = document.getElementById("espada");
@@ -11,5 +7,7 @@ function dar_espada(){
 
     let boton = document.getElementById("acciones_link")
     boton.innerHTML = "¡A luchar!";
-    boton.onclick = luchar;
+    boton.onclick = () => {
+        console.log("A luchar!!!"); // Declara la función sin parámetros
+    }
 }
