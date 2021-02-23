@@ -244,6 +244,7 @@
             <li>Nice, B (2017, septiembre 23) Beginner’s HTML Cheat Sheet. Recuperado de <a href="https://medium.com/level-up-web/beginners-html-cheat-sheet-f9b1e3ce88a6">https://medium.com/level-up-web/beginners-html-cheat-sheet-f9b1e3ce88a6</a></li>
             <li>Redacción PowerData (2019, junio 7) Ciclo de vida de un sistema de información: fases y componentes. Recuperado de: <a href="https://blog.powerdata.es/el-valor-de-la-gestion-de-datos/ciclo-de-vida-de-un-sistema-de-informacion-fases-y-componentes">https://blog.powerdata.es/el-valor-de-la-gestion-de-datos/ciclo-de-vida-de-un-sistema-de-informacion-fases-y-componentes</a></li>
         </ul>
+        <br>
         <hr>
         </div>
 
@@ -267,6 +268,7 @@
             <ul>
                 <li>Lo más recomendable es usar porcentajes por las proporciones relativas entre cada monitor, así al momento de probar la página en otra computadora con distinta resolución la interfaz sufre cambios mínimos.</li>
             </ul>
+            <br>
 
             <li>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</li>
             <ul>
@@ -275,6 +277,73 @@
         </ol>
         <br>
         <hr>
+        </div>
+
+        <div>
+        <h1>Laboratorio 4: Fundamentos de JavaScript</h1>
+        <h3>Preguntas</h3>
+        <ol>
+            <li>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</li>
+            <ul>
+                <li>JavaScript es un lenguaje interpretado no tipado, se lee y se traduce línea por línea mientras corre el programa. Mientras tanto Java es un lenguaje compilado fuertemente tipado y orientado enteramente a objetos que pasa por una máquina virtual para ser interpretado.</li>
+            </ul>
+            <a href="https://www.wildcodeschool.com/es-ES/blog/cual-es-la-diferencia-entre-java-y-javascript">Fuente</a>
+            <br>
+
+            <li>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</li>
+            <ul>
+                <li>toString() – Convierte un objeto date a string.</li>
+                <li>now() – Devuelve la cantidad de milisegundos desde la medianoche del 1 de enero de 1970.</li>
+                <li>setDate() – Establece el día del mes de un objeto date.</li>
+                <li>getFullYear – Regresa el año.</li>
+                <li>getTimezoneOffset() – Regresa la diferencia de tiempo entra la hora UTC y la hora local en minutos.</li>
+            </ul>
+            <a href="https://www.w3schools.com/jsref/jsref_obj_date.asp">Fuente</a>
+            <br>
+
+            <li>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</li>
+            <ul>
+                <li>concat() – Une dos o más arreglos y devuelve una copia de estos.</li>
+                <li>fill() – Llena los elementos de un arreglo con un valor estático.</li>
+                <li>find() – Regresa el valor del primer elemento  de un arreglo que pasa una prueba.</li>
+                <li>join() – Une todos los elementos de un arreglo en un string.</li>
+                <li>pop() – Elimina el último elemento de un arreglo y regresa el mismo.</li>
+            </ul>
+            <a href="https://www.w3schools.com/jsref/jsref_obj_array.asp">Fuente</a>
+            <br>
+
+            <li>¿Cómo se declara una variable con alcance local dentro de una función?</li>
+            <ul>
+                <li>Se declara mediante “let”, su alcance se ve definido por los corchetes.</li>
+            </ul>
+            <br>
+
+            <li>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</li>
+            <ul>
+                <li>Pueden interferir con otras funciones o reemplazar nombres de otras variables de funciones, además que si se ve modificada la variable dentro de la función repercutirá en las demás instancias. Además, dificulta la legibilidad del código fuente.</li>
+            </ul>
+        </ol>
+        <br>
+        <hr>
+
+        <h3>Ejercicios</h3>
+        <script src="js/lab4.js"></script>
+
+        <br><strong>Ejercicio 6: Calculadora</strong><br>
+        <script src="js/lab4_ejercicio6.js"></script>
+
+        <p>Se trata de un programa que permite al usuario realizar distintas operaciones con un par de números. Se utilizó una clase de JavaScript para introducir los métodos de las operaciones, las cuales son:</p>
+        <ul>
+            <li>Suma</li>
+            <li>Resta</li>
+            <li>Multiplicación</li>
+            <li>División</li>
+            <li>Potencia</li>
+        </ul>
+        <p>El programa se visualiza mediante prompts y el resultado es devuelto a través de la consola del navegador, a la que se accede al hacer click derecho/Inspeccionar elemento/Consola en cualquier parte de la página.</p>
+
+        <button class="button" onclick='problema6()'>Correr programa</button>
+        <br><br>
         </div>
     </main>
     <footer>
