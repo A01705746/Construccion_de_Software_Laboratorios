@@ -19,3 +19,8 @@ function dar_espada(){
         }
     }
 }
+
+let password = document.getElementById("password");
+password.onkeyup = () => {
+    let valor_password = password.value; // Procesar valor de la manera que se quiera
+}
