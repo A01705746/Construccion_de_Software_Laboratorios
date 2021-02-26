@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de productos</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <main>
+        <h1>Productos</h1>
+
+        <table>
+        <tr>
+        <td>
+            <div class="card">
+                <img src="media/xbox.png" alt="Xbox series X" style="width:100%">
+                <h1>XBOX Series X</h1>
+                <p class="price">$20,990.00</p>
+                <p>Consola de videojuegos, 1 TB SSD, 12 Teraflops.</p>
+                <p>Cantidad: <input type="number" id="xbox" min="0" value="0"></p>
+                <p><button onclick="carrito()">Añadir al carrito</button></p>
+            </div> 
+        </td>
+    
+        <td>
+            <div class="card">
+                <img src="media/Ahri_00.png" alt="Figura Ahri" style="width:100%">
+                <h1>Ahri Unlocked Statue</h1>
+                <p class="price">$1,535.00</p>
+                <p>Estatua de Ahri de League of Legends, material PVC, 26.3 cm de alto, 19.8 cm de ancho.</p>
+                <p>Cantidad: <input type="number" id="ahri" min="0" value="0"></p>
+                <p><button onclick="carrito()">Añadir al carrito</button></p>
+            </div>
+        </td>
+    
+        <td>
+            <div class="card">
+                <img src="media/akali.png" alt="Denim Jeans" style="width:100%">
+                <h1>K/DA Akali Unlocked Statue</h1>
+                <p class="price">$1,740.00</p>
+                <p>Estatua de Akali K/DA de League of Legends, material PVC, 24.4 cm de alto, 13.8 cm de ancho.</p>
+                <p>Cantidad: <input type="number" id="akali" min="0" value="0"></p>
+                <p><button onclick="carrito()">Añadir al carrito</button></p>
+            </div>
+        </td>
+        
+        </tr>
+        </table>
+    
+    </main>
+
+    <footer>
+        <div id="resumen"></div>
+    </footer>
+
+    <script src="venta.js"></script>
+
+</body>
+</html>
