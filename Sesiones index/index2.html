@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materialize Index</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <header>
+        <img src="css/Ahri.png" alt="logo">
+        <h1 id="titulo">Videojuegos</h1>
+        <p>
+            <a href="https://lan.leagueoflegends.com/es-mx/" target="_blank">Juega Lolsito</a>
+        </p>
+    </header>
+    <main>
+        <section>
+            <div id="link">
+                <h3>Link</h3>
+                <p>Items:</p>
+                <ul>
+                    <div id="espada"><span class="empty">Link no tiene items en este momento, por lo tanto no puede luchar</span></div>
+                </ul>
+            </div>
+            <div id="boton">
+                <button id="acciones_link" class="button" onclick="dar_espada()">Darle una espada a Link</button>
+            </div>
+            <div id="link_luchando"></div>
+        </section>
+        <hr>
+        <br><br>
+        <section>
+            <input type="password" id="password">
+        </section>
+        <section>
+            <h2>Git</h2>
+            <p>
+                Comandos de git para actualizar el respositorio
+            </p>
+            <ol>
+                <li><strong>git add -A:</strong> Sirve para rastrear los archivos y agregar los cambios la transacción.</li>
+                <li><strong>git commit -m "mensaje corto y descriptivo del cambio":</strong> Sirve para completar la transacción y guardar los cambios de manera local.</li>
+                <li><strong>git push:</strong> Sirve para "empujar" todas las transacciones del repositorio local al repositorio remoto.</li>
+            </ol>
+            <p>Entonces, cada vez que trabajemos, debemos escribir en la consola:</p>
+            <code><pre>git add -A
+git commit -m "mensaje corto y descriptivo del cambio"
+git push</pre></code>
+                
+        </section>
+    </main>
+    <footer class="fondo_morado">
+        El diseño de esta página es de <a target="_blank" href="https://jgthms.com/web-design-in-4-minutes/">Web Design in 4 minutes</a>
+    </footer>
+    <script src="js/zelda2.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
