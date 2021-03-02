@@ -32,32 +32,36 @@
         </div>
 
         <section>
-            <div class="row">
-                <div class="col l1 m3 s6">1</div>
-                <div class="col l1 m3 s6">2</div>
-                <div class="col s1">3</div>
-                <div class="col s1">4</div>
-                <div class="col s1">5</div>
-                <div class="col s1">6</div>
-                <div class="col s1">7</div>
-                <div class="col s1">8</div>
-                <div class="col s1">9</div>
-                <div class="col s1">10</div>
-                <div class="col s1">11</div>
-                <div class="col s1">12</div>
-            </div>
             <div id="link">
-                <h3>Link</h3>
-                <p>Items:</p>
-                <ul>
-                    <div id="espada"><span class="empty">Link no tiene items en este momento, por lo tanto no puede luchar</span></div>
-                </ul>
+                <div class="row">
+                    <div class="col l12 m12 s12"><h3>Link</h3></div>
+                </div>
+                <div class="row">
+                    <div class="col l12 m12 s12"><p>Items:</p></div>
+                </div>
+                <div class="row">
+                    <div class="col l12 m12 s12">
+                        <ul>
+                            <div id="espada"><span class="empty">Link no tiene items en este momento, por lo tanto no puede luchar</span></div>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div id="boton">
-                <button id="acciones_link" class="button" onclick="dar_espada()">Darle una espada a Link</button>
+            <div class="row">
+                <div class="col l3 m6 s12">
+                    <div id="boton">
+                        <button id="acciones_link" onclick="dar_espada()">Darle una espada a Link</button>
+                    </div>
+                </div>
             </div>
-            <div id="link_luchando"></div>
+
+            <div class="row">
+                <div class="col l3 m6 s12">
+                    <div id="link_luchando"></div>
+                </div>
+            </div>  
         </section>
+
         <hr>
         <br><br>
         <section>
