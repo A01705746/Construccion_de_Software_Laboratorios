@@ -15,7 +15,7 @@
 </head>
 <body>
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper red lighten-1">
           <a href="#" class="brand-logo">Videojuegos</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#git">Comandos git</a></li>
@@ -24,11 +24,29 @@
     </nav>
     
     <main class="container">
-        <div>
-            <img src="css/Ahri.png" alt="logo">
-            <p>
-                <a href="https://lan.leagueoflegends.com/es-mx/" target="_blank">Juega Lolsito</a>
-            </p>
+        <br>
+        <div class="row">
+            <div class="col s4"></div>
+            <div class="col s4">
+                <img class="responsive-img" src="css/Ahri.png" alt="logo">
+            </div>
+            <div class="col s4"></div>
+        </div>
+
+        <div class="row">
+            <div class="col m3"></div>
+            <div class="col s12 m6">
+                <div class="card grey darken-3">
+                    <div class="card-content white-text">
+                        <span class="card-title">¿Quieres jugar?</span>
+                        <p>Entra a League of Legends</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://lan.leagueoflegends.com/es-mx/" target="_blank">Juega Lolsito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col m3"></div>
         </div>
 
         <section>
@@ -48,9 +66,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col l3 m6 s12">
+                <div class="col l6 m6 s12">
                     <div id="boton">
-                        <button id="acciones_link" onclick="dar_espada()">Darle una espada a Link</button>
+                        <button class="waves-effect waves-light btn red lighten-1" id="acciones_link" onclick="dar_espada()"><i class="material-icons left">videogame_asset</i>Darle una espada a Link</button>
                     </div>
                 </div>
             </div>
@@ -85,7 +103,7 @@ git push</pre></code>
         </section>
     </main>
     
-    <footer class="page-footer">
+    <footer class="page-footer red lighten-1">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
@@ -99,7 +117,7 @@ git push</pre></code>
           © 2021 Generación TC2005B Construcción de Software
           </div>
         </div>
-      </footer>
+    </footer>
 
     <script src="js/zelda2.js"></script>
     <!--JavaScript at end of body for optimized loading-->
