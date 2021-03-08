@@ -1,0 +1,23 @@
+R E P O R T E
+1.- Ejecuta la siguiente instrucción:
+	sp_help materiales
+	¿Que muestra la instrucción?
+		Muestra las características de las columnas, su nombre, tipo, longitud, si es nulo, su llave primaria, dueño, fecha de creación, entre otras cosas.
+
+2.- Ejecuta las instrucciones que contiene el archivo crear.sql
+	¿Qué efecto tuvo esta acción?
+		Creó las cuatro tablas de forma consecutiva.
+	¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
+		Automatiza muchos procesos y ahorra tiempo de implementación en otras instancias o computadoras.
+
+3.- ¿Qué relación tienen con las tablas de la base de datos? (checa su contenido)
+		Son las tuplas de cada tabla que corresponden al modelo relacional.
+
+4.- ¿Qué relación tiene el contenido de este archivo (materiales.sql) con el formato en que se encuentran los datos en el archivo materiales.csv?
+		El tipo de dato coincide con el estipulado en el formato de nuestra tabla.
+
+5.- Ejecuta los comandos definidos en el archivo materiales.sql.
+	Después de la ejecución del comando, vuelve a revisar el contenido de la tabla materiales mediante el uso de una consulta.
+	SELECT  * FROM Materiales
+	¿Qué sucedió?
+		Se visualiza el contenido del csv con las columnas que nosotros pusimos al crear la tabla.

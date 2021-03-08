@@ -1,0 +1,68 @@
+R E P O R T E
+
+1.- Agrega un nuevo registro a la tabla de materiales:
+	INSERT INTO Materiales values(1000, 'xxx', 1000)
+	Revisa el contenido de la tabla materiales y determina si existe alguna inconsistencia en el contenido de la tabla. ¿Cuál es? ¿A qué se debe?
+		Ya hay un elemento con la misma clave, esto se debe a la falta de definición de una llave primaria.
+
+2.- Agrega nuevamente el registro a la tabla de materiales:
+	INSERT INTO Materiales values(1000, 'xxx', 1000)
+	¿Qué ocurrió?
+		No permitió la creación del registro porque no puede haber llaves duplicadas, viola una restricción.
+
+3.- Verifica si la tabla de materiales tiene definido algún constraint (restricción):
+	sp_helpconstraint materiales
+	¿Qué información muestra esta consulta?
+		Muestra la llave primaria de la tabla con su nombre ya cual se relaciona
+
+4.- Asegúrate de crear constraints análogos para definir las llaves primarias de las tablas proveedores, y proyectos.
+	¿Qué sentencias utilizaste para definir las llaves primarias?
+		ALTER TABLE Proveedores add constraint llaveProveedores PRIMARY KEY (RFC)
+		ALTER TABLE Proyectos add constraint llaveProyectos PRIMARY KEY (Numero)
+
+5.- Define el constraint correspondiente a la llave primaria para la tabla entregan, considerando que en este caso, la llave primaria está integrada por varias columnas.
+	¿Qué sentencias utilizaste para definir este constrait?
+		ALTER TABLE Entregan add constraint llaveEntregan PRIMARY KEY (Clave, RFC, Numero, Fecha)
+
+6.- Intenta insertar en la tabla entregan el siguiente registro:
+	INSERT INTO entregan values (0, 'xxx', 0, '1-jan-02', 0) ;
+	¿Qué particularidad observas en los valores para clave, rfc y numero?
+		Son datos que corresponden a llaves de otra tablas.
+	¿Cómo responde el sistema a la inserción de este registro?
+		Los agrega en la tabla de entregan pero no en las demás.
+
+7.- Intenta nuevamente la inserción del registro inconsistente.
+	¿Qué significa el mensaje que emite el sistema?
+		La inserción tiene un conflicto con la llave foránea que hace referencia en materiales.
+	¿Qué significado tiene la sentencia anterior?
+		No puedes agregar un campo nuevo en la tabla entregan que no exista en las tablas referenciadas
+
+8.- Para visualizar los constraints que hemos creado, se utiliza la siguiente sentencia:
+	sp_helpconstraint tableName
+	¿Qué significan las columnas de esas consultas?
+		Son las llaves foráneas a las que hace referencia la llave primaria de la tabla Entregan.
+
+9.- Efectúa la siguiente sentencia INSERT:
+	INSERT INTO entregan values (1000, 'AAAA800101', 5000, GETDATE(), 0);
+	Lista el registro que acabas de crear.
+	¿Qué uso se le está dando a GETDATE()?
+		Se utiliza para devolver la fecha del momento exacto que hacemos la inserción.
+	¿Tiene sentido el valor del campo de cantidad?
+		No porque es un valor nulo.
+
+10.- Para no permitir una cantidad igual a 0 utilizamos el siguiente constraint:
+	ALTER TABLE entregan add constraint cantidad check (cantidad > 0) ;
+	Intenta insertar un registro con cantidad igual o menor que 0.
+	¿Cómo responde el sistema?
+		La inserción tiene conflicto con la restricción de chequeo.
+	¿Qué significa el mensaje?
+		Que no se puede insertar un cantidad que sea menor o igual a 0 porque viola la restricción.
+
+11.- Nuevamente revisa los constraints de cada tabla y revisa las diferencias que existen entre cada uno de ellos. 
+	Abajo se muestra que la tabla es referenciada por una llave foránea.
+
+12.- Concepto de integridad referencial.
+	Es un sistema de reglas que utilizan las bases de datos para asegurar que los registros de las tablas relacionadas sean válidos	de manera que no se borren o cambien datos relacionados de forma accridental que afecten a la integridad. Toda clave foránea debe aludir a una fila válida de la que hace referencia.
+
+Referencia:
+aulaClic(s.f.) Conceptos básicos de integridad referencial. Recuperado de https://www.aulaclic.es/sql/b_8_1_1.htm20141003150441.html
