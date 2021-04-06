@@ -1,0 +1,18 @@
+{
+  "name": "Laboratorios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lab8.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mime-types": "^2.1.30",
+    "multer": "^1.4.2",
+    "prompt-sync": "^4.2.0"
+  }
+}
