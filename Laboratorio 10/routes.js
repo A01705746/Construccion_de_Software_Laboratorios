@@ -1,24 +1,8 @@
-console.log("Hola desde Node");
+const personajes = ["Link", "Zelda", "Ganon"];
 
-// fs: filesystem
-const filesystem = require('fs');
-filesystem.writeFileSync('Hola.txt', 'Hola desde Node');
-
-// imprimir el arreglo en orden con código asínccrono
-const arreglo = [5000, 60, 90, 100, 10, 20, 0, 120, 2000, 340, 1000, 50];
-for (let item of arreglo) {
-    setTimeout(() => {
-        console.log(item);
-    }, item);
-}
-
-const http = require('http');
-
-const server = http.createServer( (request, response) => {
+const requestHandler = (request, response) => {
     console.log("Hola desde el servidor");
     console.log(request.url);
-
-    const personajes = ["Link", "Zelda", "Ganon"];
 
     if (request.url === "/personajes"){
         response.setHeader('Content-Type', 'text/html');
@@ -78,6 +62,6 @@ const server = http.createServer( (request, response) => {
         response.write("</html>");
         response.end();
     }
-});
+}
 
-server.listen(3000)
+module.exports = requestHandler;
