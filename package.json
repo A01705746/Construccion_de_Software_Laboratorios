@@ -1,0 +1,25 @@
+{
+  "name": "construccion_de_software_laboratorios",
+  "version": "1.0.0",
+  "description": "Laboratorios Node+Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A01705746/Construccion_de_Software_Laboratorios.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Enrique Santos Fraire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/A01705746/Construccion_de_Software_Laboratorios/issues"
+  },
+  "homepage": "https://github.com/A01705746/Construccion_de_Software_Laboratorios#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
