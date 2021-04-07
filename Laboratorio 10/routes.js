@@ -51,6 +51,8 @@ const requestHandler = (request, response) => {
             const filesystem = require('fs');
             filesystem.writeFileSync('Nuevos Campeones.txt', nuevos_personajes.toString());
 
+            response.statusCode = 302; // Código de redirección
+            response.setHeader('Location', '/campeones');
             return response.end();
         });
     } else if(request.url === "/"){
