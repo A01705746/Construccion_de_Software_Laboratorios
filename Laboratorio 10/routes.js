@@ -1,16 +1,17 @@
-const personajes = ["Link", "Zelda", "Ganon"];
+const personajes = ["Ahri", "Akali", "Evelynn", "Sona"];
+const nuevos_personajes = [];
 
 const requestHandler = (request, response) => {
     console.log("Hola desde el servidor");
     console.log(request.url);
 
-    if (request.url === "/personajes"){
+    if (request.url === "/campeones"){
         response.setHeader('Content-Type', 'text/html');
         response.write("<html>");
         response.write('<head><meta charset="UTF-8"><title>Servidor Node</title></head>');
-        response.write("<body><h1>Personajes</h1></body>");
+        response.write("<body><h1>Campeones</h1></body>");
         if (personajes.length == 0){
-            response.write("<h2>Todos los personajes están perdidos en el tiempo</h2>");
+            response.write("<h2>Los campeones se han ido a la grieta</h2>");
         } else {
             response.write("<ul>");
             for (let personaje of personajes){
@@ -22,16 +23,16 @@ const requestHandler = (request, response) => {
         }
         response.write("</html>");
         response.end();
-    } else if(request.url == "/nuevo-personaje" && request.method === "GET"){
+    } else if(request.url == "/nuevo-campeon" && request.method === "GET"){
         response.setHeader('Content-Type', 'text/html');
         response.write("<html>");
         response.write('<head><meta charset="UTF-8"><title>Servidor Node</title></head>');
-        response.write("<body><h1>Agrega un personaje</h1>");
-        response.write('<form action="nuevo-personaje" method="POST"><input type="text" name="nombre"><input type="submit" value="Guardar personaje"></form>');
+        response.write("<body><h1>Agrega un campeón</h1>");
+        response.write('<form action="nuevo-campeon" method="POST"><input type="text" name="nombre"><input type="submit" value="Guardar campeón"></form>');
         response.write("</body>");
         response.write("</html>");
         response.end();
-    } else if(request.url == "/nuevo-personaje" && request.method === "POST"){
+    } else if(request.url == "/nuevo-campeon" && request.method === "POST"){
         const datos = [];
         request.on('data', (dato) => {
             console.log(dato);
@@ -42,23 +43,29 @@ const requestHandler = (request, response) => {
             console.log(datos_completos);
             const nuevo_personaje = datos_completos.split('=')[1];
             personajes.push(nuevo_personaje);
+            nuevos_personajes.push(nuevo_personaje);
             console.log(nuevo_personaje);
             console.log(personajes);
+
+            console.log("Campeones guardados en Campeones.txt");
+            const filesystem = require('fs');
+            filesystem.writeFileSync('Nuevos Campeones.txt', nuevos_personajes.toString());
+
             return response.end();
         });
     } else if(request.url === "/"){
         response.setHeader('Content-Type', 'text/html');
         response.write("<html>");
         response.write('<head><meta charset="UTF-8"><title>Servidor Node</title></head>');
-        response.write("<body><h1>Hola desde el servidor</h1></body>");
+        response.write("<body><h1>League of Legends</h1></body>");
         response.write("</html>");
         response.end();
     } else {
         response.statusCode = 404;
         response.setHeader('Content-Type', 'text/html');
         response.write("<html>");
-        response.write('<head><meta charset="UTF-8"><title>Page not found</title></head>');
-        response.write("<body><h1>Page not found, Link is lost in time.</h1></body>");
+        response.write('<head><meta charset="UTF-8"><title>Página no encontrada</title></head>');
+        response.write("<body><h1>Parece que un poro se ha comido la página.</h1></body>");
         response.write("</html>");
         response.end();
     }
