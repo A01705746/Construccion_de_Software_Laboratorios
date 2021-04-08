@@ -10,6 +10,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
+const personajes = ["Ahri", "Akali", "Evelynn", "Sona"];
+
 //Middleware
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -23,21 +25,30 @@ app.get('/campeones/nuevo-campeon', (request, response, next) => {
 });
 
 app.post('/campeones/nuevo-campeon', (request, response, next) => {
-    console.log(request.body.nombre)
-    response.send('<h1>Campeon guardado</h1>');
+    console.log(request.body.nombre);
+    personajes.push(request.body.nombre);
+    response.redirect('/campeones');
 });
 
 app.use('/campeones', (request, response, next) => {
-    response.send('<h1>Campeones</h1>');
+    let html = '<h1>Campeones</h1><ul>';
+    for (let personaje of personajes){
+        html = html + '<li>' + personaje + '</li>';
+    }
+    html = html + '</ul>';
+    response.send(html);
 });
 
-app.use('/', (request, response, next) => {
+app.get('/', (request, response, next) => {
+    console.log('Bienvenido');
     response.send('<h1>¡Hola mundo!</h1>'); 
 });
 
 app.use((request, response, next) => {
-    console.log('Otro middleware!');
-    response.send('¡Hola mundo!'); //Manda la respuesta
+    response.statusCode = 404;
+    response.send('<h1>Parece que un poro se ha comido la página.</h1>'); //Manda la respuesta
+    // Otra alternativa
+    // response.status(404).send('<h1>Parece que un poro se ha comido la página.</h1>');
 });
 
 app.listen(3000);
