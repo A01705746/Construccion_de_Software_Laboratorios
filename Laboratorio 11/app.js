@@ -24,7 +24,7 @@ app.use('/campeones', rutasCampeones);
 
 app.get('/', (request, response, next) => {
     console.log('Bienvenido');
-    response.send('<h1>¡Hola mundo!</h1>'); 
+    response.send('<h1>League of Legends</h1>'); 
 });
 
 app.use((request, response, next) => {
