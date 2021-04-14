@@ -8,12 +8,16 @@ console.log('Genial!');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
 
 const rutasCampeones = require('./routes/campeones');
 
 //Middleware
 app.use(bodyParser.urlencoded({extended: false}));
+
+// Para acceder a los recursos de la carpeta public
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((request, response, next) => {
     console.log('Middleware!');
@@ -25,6 +29,10 @@ app.use('/campeones', rutasCampeones);
 app.get('/', (request, response, next) => {
     console.log('Bienvenido');
     response.send('<h1>League of Legends</h1>'); 
+});
+
+app.get('/git', (request, response, next) => {
+    response.sendFile(path.join(__dirname, 'views', 'git.html'));
 });
 
 app.use((request, response, next) => {

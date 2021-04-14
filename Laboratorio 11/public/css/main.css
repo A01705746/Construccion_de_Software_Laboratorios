@@ -1,0 +1,127 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
+    color: #566b78;
+}
+
+h2 {
+    color: rgb(131, 78, 180);
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+h1, strong {
+  color: #333;
+}
+
+code,
+pre {
+  background: #f5f7f9;
+  border-bottom: 1px solid #d8dee9;
+  color: #a7adba;
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+pre {
+  padding: 1em;
+  border-left: 2px solid #69c;
+}
+
+a {
+    color: #e81c4f;
+}
+
+header {
+  background-color: #464646;
+  background-image: url("champion-akali-splash.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  line-height: 1.2;
+  padding: 10vw 2em;
+  text-align: center;
+}
+
+header img {
+  display: inline-block;
+  height: 140px;
+  vertical-align: top;
+}
+
+header h1 {
+  color: white;
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+header a {
+  border: 1px solid #e81c4f;
+  border-radius: 290486px;
+  color: white;
+  font-size: 0.6em;
+  letter-spacing: 0.2em;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: none 200ms ease-out;
+  transition-property: color, background;
+}
+
+header a:hover {
+  background:  #e81c4f;
+  color: white;
+}
+
+.fondo_morado{
+  background-color: rgb(234, 206, 250);
+}
+
+#titulo{
+  color: #e81c4f;
+}
+
+.button {
+  border-top: 1px solid #ffb5b5;
+  background: #e62952;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4d0909), to(#e62952));
+  background: -webkit-linear-gradient(top, #4d0909, #e62952);
+  background: -moz-linear-gradient(top, #4d0909, #e62952);
+  background: -ms-linear-gradient(top, #4d0909, #e62952);
+  background: -o-linear-gradient(top, #4d0909, #e62952);
+  padding: 9.5px 19px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 14px;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  vertical-align: middle;
+  }
+.button:hover {
+  border-top-color: #540f1e;
+  background: #540f1e;
+  color: #ccc;
+  }
+.button:active {
+  border-top-color: #de2c2c;
+  background: #de2c2c;
+  }
+
+  .empty {
+    color: #e81c4f;
+  }
