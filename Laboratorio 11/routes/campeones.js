@@ -24,12 +24,7 @@ router.post('/nuevo-campeon', (request, response, next) => {
 });
 
 router.use('/', (request, response, next) => {
-    let html = '<h1>Campeones</h1><ul>';
-    for (let personaje of personajes){
-        html = html + '<li>' + personaje + '</li>';
-    }
-    html = html + '</ul>';
-    response.send(html);
+    response.render('campeones', {lista_personajes: personajes});
 });
 
 module.exports = router;
