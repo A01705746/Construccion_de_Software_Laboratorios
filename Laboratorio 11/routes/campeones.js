@@ -4,6 +4,8 @@ const router = express.Router();
 
 const path = require('path');
 
+const campeonesController = require('../controllers/campeones_controller');
+
 const personajes = ["Ahri", "Akali", "Evelynn", "Sona"];
 const nuevos_personajes = [];
 
@@ -25,11 +27,6 @@ router.post('/nuevo-campeon', (request, response, next) => {
     response.redirect('/campeones');
 });
 
-router.use('/', (request, response, next) => {
-    response.render('campeones', {
-        lista_personajes: personajes,
-        titulo: 'Campeones'
-    });
-});
+router.use('/', campeonesController.get);
 
 module.exports = router;
