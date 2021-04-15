@@ -8,13 +8,13 @@ const personajes = ["Ahri", "Akali", "Evelynn", "Sona"];
 const nuevos_personajes = [];
 
 router.get('/nuevo-campeon', (request, response, next) => {
-    response.send('<h1>Nuevo Campeon</h1><body><h1>Agrega un campeón</h1><form action="nuevo-campeon" method="POST"><input type="text" name="nombre"><input type="submit" value="Guardar campeón"></form></body>'); 
+    response.send('<h1>Nuevo Campeon</h1><body><h1>Agrega un campeón</h1><form action="nuevo-campeon" method="POST"><input type="text" name="nombre_campeon"><input type="submit" value="Guardar campeón"></form></body>'); 
 });
 
 router.post('/nuevo-campeon', (request, response, next) => {
-    console.log(request.body.nombre);
-    personajes.push(request.body.nombre);
-    nuevos_personajes.push(request.body.nombre);
+    console.log(request.body.nombre_campeon);
+    personajes.push(request.body.nombre_campeon);
+    nuevos_personajes.push(request.body.nombre_campeon);
 
     console.log("Campeones guardados en Nuevos Campeones.txt");
     const filesystem = require('fs');
