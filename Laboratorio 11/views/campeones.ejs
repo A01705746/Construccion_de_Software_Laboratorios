@@ -1,55 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materialize Index</title>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <!-- <link rel="stylesheet" href="css/main.css"> -->
-    
-</head>
-<body>
-    <nav>
-        <div class="nav-wrapper red lighten-1">
-          <a href="#" class="brand-logo">Videojuegos</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/git">Comandos git</a></li>
-          </ul>
-        </div>
-    </nav>
++<%- include('partials/head.ejs') %>
++<%- include('partials/navbar.ejs') %>
 
     <main class="container">
-        <h1>Campeones</h1>
+        <h1><%= titulo %></h1>
         <ul>
             <% for (let personaje of lista_personajes){ %>
                 <li> <%= personaje %> </li>
             <% } %>
         </ul>
     </main>
-
-    <footer class="page-footer red lighten-1">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Footer Content</h5>
-            </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-copyright">
-          <div class="container">
-          © 2021 Generación TC2005B Construcción de Software
-          </div>
-        </div>
-    </footer>
-
-    <script src="js/zelda2.js"></script>
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-</body>
-</html>

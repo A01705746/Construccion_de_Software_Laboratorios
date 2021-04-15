@@ -24,7 +24,10 @@ router.post('/nuevo-campeon', (request, response, next) => {
 });
 
 router.use('/', (request, response, next) => {
-    response.render('campeones', {lista_personajes: personajes});
+    response.render('campeones', {
+        lista_personajes: personajes,
+        titulo: 'Campeones'
+    });
 });
 
 module.exports = router;
