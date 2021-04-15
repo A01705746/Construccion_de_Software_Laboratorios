@@ -38,6 +38,10 @@ app.get('/git', (request, response, next) => {
     response.sendFile(path.join(__dirname, 'views', 'git.html'));
 });
 
+app.get('/laboratorios', (request, response, next) => {
+    response.sendFile(path.join(__dirname, 'views', 'lab6.html'));
+});
+
 app.use((request, response, next) => {
     response.statusCode = 404;
     response.send('<h1>Parece que un poro se ha comido la página.</h1>'); //Manda la respuesta
