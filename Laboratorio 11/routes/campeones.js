@@ -8,7 +8,9 @@ const personajes = ["Ahri", "Akali", "Evelynn", "Sona"];
 const nuevos_personajes = [];
 
 router.get('/nuevo-campeon', (request, response, next) => {
-    response.send('<h1>Nuevo Campeon</h1><body><h1>Agrega un campeón</h1><form action="nuevo-campeon" method="POST"><input type="text" name="nombre_campeon"><input type="submit" value="Guardar campeón"></form></body>'); 
+    response.render('nuevo-campeon', {
+        titulo: 'Nuevo Campeón'
+    });
 });
 
 router.post('/nuevo-campeon', (request, response, next) => {
