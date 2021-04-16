@@ -1,3 +1,4 @@
+<!--https://www.egames.news/__export/1617404147991/sites/debate/img/2021/04/02/cuxles_son_las_habilidades_de_gwen_en_league_of_legends.jpg_423682103.jpg-->
 <%- include('partials/head.ejs') %>
 <%- include('partials/navbar.ejs') %>
 
@@ -9,15 +10,15 @@
         <div class="col s4">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="https://www.egames.news/__export/1617404147991/sites/debate/img/2021/04/02/cuxles_son_las_habilidades_de_gwen_en_league_of_legends.jpg_423682103.jpg">
+            <img class="activator" src="<%= personaje.imagen %>">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><%= personaje %><i class="material-icons right">more_vert</i></span>
+            <span class="card-title activator grey-text text-darken-4"><%= personaje.nombre %><i class="material-icons right">more_vert</i></span>
             <p><a href="#">...</a></p>
           </div>
           <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4"><%= personaje %><i class="material-icons right">close</i></span>
-            <p>Aquí habrá más información del personaje.</p>
+            <span class="card-title grey-text text-darken-4"><%= personaje.nombre %><i class="material-icons right">close</i></span>
+            <p>Fuente de la imagen: <%= personaje.imagen %></p>
           </div>
         </div>
         </div>  

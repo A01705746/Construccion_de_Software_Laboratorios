@@ -8,7 +8,7 @@ exports.getNuevoCampeon = (request, response, next) => {
 
 exports.postNuevoCampeon = (request, response, next) => {
     console.log(request.body.nombre_campeon);
-    const nuevo_campeon = new Campeon(request.body.nombre_campeon);
+    const nuevo_campeon = new Campeon(request.body.nombre_campeon, request.body.imagen_campeon);
     nuevo_campeon.save();
     response.redirect('/campeones');
 };
