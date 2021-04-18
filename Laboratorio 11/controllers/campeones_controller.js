@@ -2,7 +2,8 @@ const Campeon = require('../models/campeon');
 
 exports.getNuevoCampeon = (request, response, next) => {
     response.render('nuevo-campeon', {
-        titulo: 'Nuevo Campeón'
+        titulo: 'Nuevo Campeón',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
 
@@ -27,6 +28,7 @@ exports.get = (request, response, next) => {
 
     response.render('campeones', {
         lista_personajes: Campeon.fetchAll(),
-        titulo: 'Campeones'
+        titulo: 'Campeones',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
