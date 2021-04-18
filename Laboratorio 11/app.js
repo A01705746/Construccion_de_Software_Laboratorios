@@ -47,6 +47,7 @@ app.use('/users', rutasUsers);
 
 app.get('/', (request, response, next) => {
     console.log('Bienvenido');
+    console.log(request.session);
     response.send('<h1>League of Legends</h1>'); 
 });
 
