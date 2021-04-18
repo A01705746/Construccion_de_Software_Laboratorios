@@ -11,6 +11,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 
+var cookieParser = require('cookie-parser');
+
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -18,6 +20,7 @@ const rutasCampeones = require('./routes/campeones');
 
 //Middleware
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
 
 // Para acceder a los recursos de la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
