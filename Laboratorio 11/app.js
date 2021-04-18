@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const rutasCampeones = require('./routes/campeones');
+const rutasUsers = require('./routes/users');
 
 //Middleware
 app.use(bodyParser.urlencoded({extended: false}));
@@ -31,6 +32,8 @@ app.use((request, response, next) => {
 });
 
 app.use('/campeones', rutasCampeones);
+
+app.use('/users', rutasUsers);
 
 app.get('/', (request, response, next) => {
     console.log('Bienvenido');
