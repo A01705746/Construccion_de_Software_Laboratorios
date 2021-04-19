@@ -10,12 +10,9 @@ module.exports = class campeon {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        // personajes.push(this);
-        // // Guardado en archivo txt
-        // nuevos_personajes.push(this.nombre);
-        // console.log("Campeones guardados en Nuevos Campeones.txt");
-        // const filesystem = require('fs');
-        // filesystem.writeFileSync('Nuevos Campeones.txt', nuevos_personajes.toString());
+        return db.execute('INSERT INTO personajes (nombre, imagen) VALUES (?, ?)',
+        [this.nombre, this.imagen]
+        );
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.

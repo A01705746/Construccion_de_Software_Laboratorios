@@ -10,11 +10,14 @@ exports.getNuevoCampeon = (request, response, next) => {
 exports.postNuevoCampeon = (request, response, next) => {
     console.log(request.body.nombre_campeon);
     const nuevo_campeon = new Campeon(request.body.nombre_campeon, request.body.imagen_campeon);
-    nuevo_campeon.save();
-
-    response.setHeader('Set-Cookie', ['ultimo_campeon='+ nuevo_campeon.nombre + '; HttpOnly']);
-
-    response.redirect('/campeones');
+    nuevo_campeon.save()
+        .then(() => {
+            response.setHeader('Set-Cookie', ['ultimo_campeon='+ nuevo_campeon.nombre + '; HttpOnly']);
+            response.redirect('/campeones');
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 exports.get = (request, response, next) => {
