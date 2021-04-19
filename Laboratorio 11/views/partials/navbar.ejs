@@ -12,6 +12,10 @@
         <% if (isLoggedIn) { %>
           <li><a href="/users/logout">Salir</a></li>
         <% } %>
+
+        <% if (isLoggedIn == false) { %>
+          <li><a href="/users/login">Iniciar sesión</a></li>
+        <% } %>
       </ul>
     </div>
 </nav>

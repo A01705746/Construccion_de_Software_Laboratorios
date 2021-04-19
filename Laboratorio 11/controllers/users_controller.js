@@ -16,6 +16,6 @@ exports.getLogout = (request, response, next) => {
     request.session.destroy((err) => {
         console.log(err);
         console.log('Logout');
-        response.redirect('/'); //Este código se ejecuta cuando la sesión se elimina.
+        response.redirect('/campeones'); //Este código se ejecuta cuando la sesión se elimina.
     });
 };
