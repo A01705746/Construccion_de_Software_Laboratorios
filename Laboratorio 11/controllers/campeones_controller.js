@@ -28,16 +28,9 @@ exports.get = (request, response, next) => {
     
     Campeon.fetchAll()
         .then(([rows, fieldData]) => {
-            const campeones = [];
-            for (let personaje of rows) {
-                campeones.push({
-                    nombre: personaje.nombre,
-                    imagen: personaje.imagen
-                });
-            }
-            console.log(campeones);
+            console.log(rows);
             response.render('campeones', {
-                lista_personajes: campeones,
+                lista_personajes: rows,
                 titulo: 'Campeones',
                 isLoggedIn: request.session.isLoggedIn === true ? true : false
             });
