@@ -25,10 +25,25 @@ exports.get = (request, response, next) => {
     // Con cookie-parser
     console.log(request.cookies);
     console.log(request.cookies.ultimo_campeon);
+    
+    Campeon.fetchAll()
+        .then(([rows, fieldData]) => {
+            const campeones = [];
+            for (let personaje of rows) {
+                campeones.push({
+                    nombre: personaje.nombre,
+                    imagen: personaje.imagen
+                });
+            }
+            console.log(campeones);
+            response.render('campeones', {
+                lista_personajes: campeones,
+                titulo: 'Campeones',
+                isLoggedIn: request.session.isLoggedIn === true ? true : false
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
 
-    response.render('campeones', {
-        lista_personajes: Campeon.fetchAll(),
-        titulo: 'Campeones',
-        isLoggedIn: request.session.isLoggedIn === true ? true : false
-    });
 };
