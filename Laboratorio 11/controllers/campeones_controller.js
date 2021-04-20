@@ -6,6 +6,7 @@ exports.getNuevoCampeon = (request, response, next) => {
     }
     response.render('nuevo-campeon', {
         titulo: 'Nuevo Campeón',
+        csrfToken: request.csrfToken(),
         isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };

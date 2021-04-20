@@ -4,6 +4,7 @@
 <main class="container">
     <h1><%= titulo %></h1>
     <form action="nuevo-campeon" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
         <input type="text" name="nombre_campeon">
         <input type="text" name="imagen_campeon">
         <input type="submit" value="Guardar campeón">
