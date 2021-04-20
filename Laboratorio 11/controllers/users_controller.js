@@ -1,15 +1,46 @@
+const Usuario = require('../models/user');
+const bcrypt = require('bcryptjs');
+const session = require('express-session');
+
 exports.getLogin = (request, response, next) => {
     response.render('login', {
         titulo: 'Inicio de sesión',
+        error: request.session.error,
         isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
 
 exports.postLogin = (request, response, next) => {
-    request.session.isLoggedIn = true;
-    request.session.usuario = request.body.usuario;
-
-    response.redirect('/campeones');
+    request.session.error = "";
+    const username = request.body.usuario;
+    console.log(username);
+    Usuario.fetchOne(username)
+        .then(([rows, fieldData]) => {
+            if (rows.length < 1) {
+                request.session.error = "El usuario y/o contraseña no coinciden";
+                response.redirect('/users/login');
+            }
+            else {
+                bcrypt.compare(request.body.password, rows[0].password)
+                    .then(doMatch => {
+                        if (doMatch) {
+                            request.session.isLoggedIn = true;
+                            request.session.usuario = request.body.usuario;
+                            return request.session.save(err => {
+                                response.redirect('/campeones');
+                            });
+                        }
+                        request.session.error = "El usuario y/o contraseña no coinciden";
+                        response.redirect('/users/login');
+                    }).catch(err => {
+                        request.session.error = "El usuario y/o contraseña no coinciden";
+                        response.redirect('/users/login');
+                    });
+                }
+            })
+            .catch (err => {
+                console.log(err);
+            });
 };
 
 exports.getLogout = (request, response, next) => {
@@ -18,4 +49,21 @@ exports.getLogout = (request, response, next) => {
         console.log('Logout');
         response.redirect('/campeones'); //Este código se ejecuta cuando la sesión se elimina.
     });
+};
+
+exports.getRegister = (request, response, next) => {
+    response.render('register', {
+        titulo: 'Registra tus datos',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
+    });
+};
+
+exports.postRegister = (request, response, next) => {
+    const nuevo_usuario = new Usuario(request.body.nombre, request.body.usuario, request.body.password);
+    nuevo_usuario.save()
+        .then(() => {
+            request.session.isLoggedIn = true;
+            request.session.usuario = request.body.usuario;
+            response.redirect('/campeones');
+        }).catch(err => console.log(err));
 };
