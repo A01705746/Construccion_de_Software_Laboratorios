@@ -10,6 +10,8 @@ router.get('/nuevo-campeon', campeonesController.getNuevoCampeon);
 
 router.post('/nuevo-campeon', campeonesController.postNuevoCampeon);
 
+router.get('/:campeon_id', campeonesController.getCampeon);
+
 router.use('/', campeonesController.get);
 
 module.exports = router;

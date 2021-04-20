@@ -19,4 +19,8 @@ module.exports = class campeon {
     static fetchAll() {
         return db.execute('SELECT * FROM personajes');
     }
+
+    static fetchOne(id) {
+        return db.execute('SELECT * FROM personajes WHERE id = ?', [id]);
+    }
 }

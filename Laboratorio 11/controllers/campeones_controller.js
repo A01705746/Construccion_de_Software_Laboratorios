@@ -20,6 +20,23 @@ exports.postNuevoCampeon = (request, response, next) => {
         });
 };
 
+exports.getCampeon = (request, response, next) => {
+    const id = request.params.campeon_id;
+    Campeon.fetchOne(id)
+        .then(([rows, fieldData]) => {
+            console.log(rows);
+            response.render('campeones', {
+                lista_personajes: rows,
+                titulo: 'Campeones',
+                isLoggedIn: request.session.isLoggedIn === true ? true : false
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+};
+
 exports.get = (request, response, next) => {
 
     console.log('Cookie: ' + request.get('Cookie'));
