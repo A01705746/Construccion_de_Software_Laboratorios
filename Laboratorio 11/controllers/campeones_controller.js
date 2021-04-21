@@ -1,9 +1,6 @@
 const Campeon = require('../models/campeon');
 
 exports.getNuevoCampeon = (request, response, next) => {
-    if (!request.session.isLoggedIn) {
-        return response.redirect('/users/login');
-    }
     response.render('nuevo-campeon', {
         titulo: 'Nuevo Campeón',
         csrfToken: request.csrfToken(),

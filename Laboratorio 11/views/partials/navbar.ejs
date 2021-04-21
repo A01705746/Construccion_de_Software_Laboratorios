@@ -2,7 +2,9 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Videojuegos</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/campeones">Campeones</a></li>
+        <% if (isLoggedIn) { %>
+          <li><a href="/campeones">Campeones</a></li>
+        <% } %>
         <% if (isLoggedIn) { %>
           <li><a href="/campeones/nuevo-campeon">Nuevo Campeón</a></li>
         <% } %>
