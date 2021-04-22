@@ -3,11 +3,23 @@
 
 <main class="container">
     <h1><%= titulo %></h1>
-    <form action="nuevo-campeon" method="POST">
+    <form action="nuevo-campeon" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+
+        <label for="nombre_campeon">Nombre de Campeón</label>
         <input type="text" name="nombre_campeon">
-        <input type="text" name="imagen_campeon">
-        <input type="submit" value="Guardar campeón">
+
+        <div class="file-field input-field">
+            <div class="btn">
+              <span>Imagen</span>
+              <input type="file" name="imagen_campeon">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
+
+        <input type="submit" class="waves-effect waves-light btn" value="Guardar campeón">
     </form>
     <br>
 </main>
