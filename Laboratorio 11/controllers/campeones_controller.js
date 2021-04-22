@@ -9,8 +9,19 @@ exports.getNuevoCampeon = (request, response, next) => {
 };
 
 exports.postNuevoCampeon = (request, response, next) => {
+    console.log("Creando nuevo personaje...");
     console.log(request.body.nombre_campeon);
-    const nuevo_campeon = new Campeon(request.body.nombre_campeon, request.body.imagen_campeon);
+
+    const image = request.file;
+    console.log(image);
+
+    if(!image) {
+        console.error('Error al subir imagen');
+        return response.status(422).redirect('/');
+    }
+
+    const nuevo_campeon = new Campeon(request.body.nombre_campeon, image.filename);
+    
     nuevo_campeon.save()
         .then(() => {
             response.setHeader('Set-Cookie', ['ultimo_campeon='+ nuevo_campeon.nombre + '; HttpOnly']);
