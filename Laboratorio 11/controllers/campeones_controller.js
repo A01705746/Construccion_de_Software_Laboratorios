@@ -1,3 +1,4 @@
+const { request, response } = require('express');
 const Campeon = require('../models/campeon');
 
 exports.getNuevoCampeon = (request, response, next) => {
@@ -49,6 +50,10 @@ exports.getCampeon = (request, response, next) => {
 
 };
 
+exports.postBuscar = (request, response, next) => {
+    response.status(200).json({message: "Respuesta asíncrona"});
+}
+
 exports.get = (request, response, next) => {
 
     console.log('Cookie: ' + request.get('Cookie'));
@@ -64,6 +69,7 @@ exports.get = (request, response, next) => {
             response.render('campeones', {
                 lista_personajes: rows,
                 titulo: 'Campeones',
+                csrfToken: request.csrfToken(),
                 isLoggedIn: request.session.isLoggedIn === true ? true : false
             });
         })

@@ -4,7 +4,9 @@
 
     <main class="container">
       <h1><%= titulo %></h1>
-
+      <label for="buscar">Buscar Campeón</label>
+      <input type="hidden" id="_csrf" name="csrf" value="<%= csrfToken %>">
+      <input type="text" id="buscar" name="buscar" onkeyup="buscar()">
       <div class="row">
       <% for (let personaje of lista_personajes){ %>
         <div class="col s12 m4 l4">
@@ -28,3 +30,29 @@
     </main>
 
 <%- include('partials/footer.ejs') %>
+
+<script>
+  function buscar() {
+    const valor_busqueda = document.getElementById('buscar').value;
+    //El token de protección CSRF
+    const csrf = document.getElementById('_csrf').value;
+
+    //función que manda la petición asíncrona
+    fetch('/campeones/buscar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'csrf-token': csrf
+        },
+        body: JSON.stringify(valor_busqueda)
+    }).then(result => {
+        return result.json(); //Regresa otra promesa
+    }).then(data => {
+        //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+        //...
+        console.log(data);
+    }).catch(err => {
+        console.error(err);
+    });
+  }
+</script>

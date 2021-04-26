@@ -14,6 +14,8 @@ router.post('/nuevo-campeon', isAuth, campeonesController.postNuevoCampeon);
 
 router.get('/:campeon_id', isAuth, campeonesController.getCampeon);
 
+router.post('/buscar', isAuth, campeonesController.postBuscar)
+
 router.use('/', isAuth, campeonesController.get);
 
 module.exports = router;
