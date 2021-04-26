@@ -1,4 +1,5 @@
 const { request, response } = require('express');
+const campeon = require('../models/campeon');
 const Campeon = require('../models/campeon');
 
 exports.getNuevoCampeon = (request, response, next) => {
@@ -51,7 +52,16 @@ exports.getCampeon = (request, response, next) => {
 };
 
 exports.postBuscar = (request, response, next) => {
-    response.status(200).json({message: "Respuesta asíncrona"});
+    console.log(request.body);
+    const name = request.body.valor_busqueda;
+    Campeon.fetchByName(name)
+        .then(([rows, fieldData]) => {
+            console.log(rows);
+            response.status(200).json(rows);
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }
 
 exports.get = (request, response, next) => {

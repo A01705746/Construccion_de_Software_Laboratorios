@@ -23,4 +23,8 @@ module.exports = class campeon {
     static fetchOne(id) {
         return db.execute('SELECT * FROM personajes WHERE id = ?', [id]);
     }
+
+    static fetchByName(name) {
+        return db.execute("SELECT * FROM personajes WHERE nombre LIKE ? ", ['%'+name+'%']);
+    }
 }
