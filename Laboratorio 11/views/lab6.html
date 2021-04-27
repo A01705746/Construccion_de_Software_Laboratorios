@@ -30,6 +30,7 @@
             <li><a href="#lab13">Lab 13</a></li>
             <li><a href="#lab17">Lab 17</a></li>
             <li><a href="#lab18">Lab 18</a></li>
+            <li><a href="#lab24">Lab 24</a></li>
           </ul>
         </div>
     </nav>
@@ -519,6 +520,34 @@
                     <li>Sistemas basados en algo conocido: Contraseñas o passphrase.</li>
                     <li>Sistemas basados en algo poseído: Tarjetas de identidad, tarjetas inteligentes, dispositivos tipo epass token, tarjetas de coordenadas, dongle criptográfico.</li>
                     <li>Sistemas basados en una característica física delante usuario o un acto involuntario del mismo: Verificación por voz, escritura, huellas, rostro.</li>
+                </ul>
+                <br>
+            </ol>
+            <br><br>
+            <hr>
+            </div>
+        </section>
+
+        <section id="lab24">
+            <div>
+            <h2 class="center-align">Lab 24: Introducción a AJAX</h2>
+            <h3>Preguntas</h3>
+            <ol>
+                <li>¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications?</li>
+                <ul>
+                    <li>Antes el usuario tenía que esperar a que se genere toda la página para poder interactuar con ella, generando gran tráfico de procesamiento. Gracias a la comunicación asíncrona de AJAX fue posible enviar sólo alguna partes de código, dividiendola en paquetes, reduciendo en gran medida el tráfico y mejorando la interacción con la interfaz.</li>
+                </ul>
+                <br>
+
+                <li>¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor?</li>
+                <ul>
+                    <li>Las aplicaciones de JavaScript pueden poner en riesgo al usuario que los ejecutan, por lo que los navegadores limitan el entorno de ejecución, con pocos recursos y permisos. No pueden leer ni escribir ningún archivo del sistema en el que se ejecutan, tampoco establecer conexiones de red con dominios distintos a donde se aloja. En cuanto a la validación de seguridad, lo ideal sería que fuera por ambas partes, pero principalmente por el lado del servidor, pues por ahí se tiene más control de la información, esto a través de las cookies por el lado del cliente y las variables de sesión por el lado del servidor.</li>
+                </ul>
+                <br>
+
+                <li>¿Qué es JSON?</li>
+                <ul>
+                    <li>JavaScript Object Notation, es un formato ligero de intercambio de datos, fácil de leer y escribir por un humano y fácil de analizar por una computadora, es un formato de texto independiente de los lenguajes pero con convenciones similares, haciéndolo un buen lenguaje de intercambio de datos. Está formado por {atributo: valor}</li>
                 </ul>
                 <br>
             </ol>
